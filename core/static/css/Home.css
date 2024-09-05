@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+}
+html, body{
+  box-sizing: border-box;
+  padding: 20px;
+  
+}
+
+
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 20px 0 0 0;
+  justify-content: center;
+  align-items: center;
+}
+.head{
+  position: fixed;
+  padding: 10px;
+  width: 100%;
+  max-height:250px;
+  background: rgb(197,246,23);
+  color: rgb(0,152,199);
+  top: 1px;
+  font-family: Arial, Sans-Serif;
+}
+.head p, h1{
+  margin-left: 5px;
+  font-size: 30px;
+}
+.search{
+  display: flex;
+}
+#searchbox{
+  margin-top: 0;
+  position: relative;
+  top: -5px;
+  font-size: 30px;
+  width: 60%;
+  border-radius: 10px;
+  background: rgb(197,150,23);
+}
+#cart{
+  display: block;
+  height: 20px;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 100px;
+  color: rgb(0,152,199);
+}
+
+#nav-var{
+background: rgb(197,246,23);
+padding: 0;
+position: relative;
+top: -15px;
+
+}
+#nav-var ul{
+  list-style-type: none;
+  padding: 0;
+}
+#nav-var ul li{
+  float: left;
+  margin-left: 20px;
+  padding: 0;
+}
+#nav-var ul li a{
+  display: block;
+  text-decoration: none;
+  color: rgb(0,152,199);
+  font-weight: bold;
+  font-size: 30px;
+  height: 50px;
+  background: rgb(197,246,23);
+}
+#nav-var ul li a:first-child{
+  margin-left: 0;
+}
+
+.body{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 1000%;
+  background-attachment: scroll;
+  background: rgb(197,220,23);
+}

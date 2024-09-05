@@ -1,0 +1,33 @@
+.Products{
+  border: 1px solid rgb(181,2,46);
+  text-align: left;
+  
+  padding: 10px;
+  
+}
+#img{
+  
+}
+.Products ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.Products ul li{
+  margin: 0;
+  padding: 0;
+}
+.Products ul li p{
+  margin: 0;
+  font-size: 30px;
+  font-family:Arial;
+  font-weight: bold;
+}
+.price{
+  display: flex;
+  margin: 0;
+}
+.discount{
+  padding-left: 50px;
+  text-decoration-line: line-through;
+}

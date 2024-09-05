@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/Home.css' %}">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+  <title>Django_OnlineShop</title>
+</head>
+<body>
+  <div class="container">
+
+    
+  <div class="body">
+    <!-- Content of Web -->
+    <div class="head">
+      <h1>Amazon Shop</h1>
+      <!-- Header of Web-->
+      <p>Welcome to Django Fashion Shop<p/>
+<div class="search">
+    <label for="searchbox"></label>
+  <input type="search" class="form-control"  id="searchbox" placeholder="Type to search...">
+  <a href="cart" id="cart">Cart</a>
+</div>
+<div id="nav-var">
+  <ul>
+  <li><a href="Deals">Deals</a></li>
+  <li><a href="Home">Home</a></li>
+<li><a href="Shirts">Shirts</a></li>
+ <li><a href="Pants">Pants</a></li>
+ <li><a href="Shoes">Shoes</a></li>
+<li><a href="Watches">Watches</a></li>
+  <li><a href="Hats">Hats</a></li>
+  </ul>
+</div>
+
+    </div>
+    
+    <div id="products">
+      <!-- Products wil appear-->
+      <div class="products">
+        <img src="" alt="image">
+        <p>Nike low dunk</p>
+      </div>
+      
+    </div>
+  </div>
+  <div class="container">
+ 
+</div>
+
+  <div class="footer">
+    <!-- Footer of Web -->
+    
+  </div>
+    
+    
+    
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/Home.js' %}"></script>
+</body>
+</html>
