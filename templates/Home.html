@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<style>
+  
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  padding: 10px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background: rgb(230,230,230);
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 35px 17px 20px 12px;
+}
+p{
+  margin: 5px 0px 5px 0px;
+  text-align: left;
+}
+hr{
+  color: #000;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  margin: 5px 0px 30px 0px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 2px;
+  
+}
+
+form input, form select, form textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+form button {
+  margin-left: 5px;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #218838;
+}
+#lab0, #lab1, #lab2, #lab3, #lab4, #lab5, #lab6{
+  display: flex;
+}
+#fname,#lname,#date,#gender,#township,#street,#address,#city,#phone,#workphone{
+  width: 50%;
+  margin: 5px;
+}
+#fileInput{
+  width: 45%;
+  margin: 5px;
+}
+#lab1 label:last-child{
+  margin-left: 90px;
+}
+ #lab5 label:last-child{
+   margin-left: 120px;
+ }
+#lab1 label:first-child{
+  margin-left: 5px;
+}
+label{
+  margin-left: 5px;
+}
+#email{
+  margin-left: 5px;
+}
+
+textarea{
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+#preview{
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+#la{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+</style>
+
+
+  <title>Student Management</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Registration Form</h2>
+    <p>Fill out the form for registration</p>
+    <hr>
+    <form id="form">
+      
+   <label for="file">Your Photo</label>
+   <div id="la">
+      <input type="file" id="fileInput" accept="image/*">
+      <img id="preview" alt="Image Preview">
+      </div>
+      <label for="name">Name</label>
+      <div id="lab0">
+        <input type="text" id="fname" placeholder="First">
+        <input type="text" id="lname" placeholder="Last">
+      </div>
+      
+      <div id="lab1">
+        <label for="birthdate">Birth Date</label>
+        <label for="gender">Gender</label>
+      </div>
+      
+      <div id="lab2">
+        <input type="datetime-local" id="date" >
+        <select name="gender" id="gender">
+          <option value="">Please select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      
+      <label for="address">Address</label>
+      <div id="lab3">
+        <input type="text" id="address" placeholder="Country">
+        <input type="text" id="city" placeholder="City">
+      </div>
+      
+      <div id="lab4">
+        <input type="text" id="township" placeholder="Township">
+        <input type="text" id="street" placeholder="Street">
+      </div>
+
+      <label for="email">Email</label>
+      <input type="email" id="email">
+
+      <div id="lab5">
+        <label for="phone">Phone</label>
+        <label for="workphone">Work Phone</label>
+      </div>
+      
+      <div id="lab6">
+        <input type="number" id="phone">
+        <input type="number" id="workphone">
+      </div>
+      
+      <label for="experience">Experience</label>
+      <textarea id="experience" rows="10" cols="40" placeholder="Write here"></textarea>
+      
+      <label for="comment">Comment</label>
+      <textarea id="comment" rows="5" cols="40" placeholder="Write here"></textarea>
+      <button type="button" id="subtn">Submit</button>
+    </form>
+  </div>
+    <script src="Script.js"></script>
+<script>
+function saveFormData() {
+    // Get form data
+    const fname = document.getElementById('fname').value;
+    const lname = document.getElementById('lname').value;
+    const birthdate = document.getElementById('date').value;
+    const gender = document.getElementById('gender').value;
+    const country = document.getElementById('address').value;
+    const city = document.getElementById('city').value;
+    const township = document.getElementById('township').value;
+    const street = document.getElementById('street').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const workphone = document.getElementById('workphone').value;
+    const experience = document.getElementById('experience').value;
+    const comment = document.getElementById('comment').value;
+ 
+    // Create an object to store the data
+    const studentData = {
+        name: `${fname} ${lname}`,
+        birthdate: birthdate,
+        gender: gender,
+        address: `${country}, ${city}, ${township}, ${street}`,
+        email: email,
+        phone: phone,
+        workphone: workphone,
+        experience: experience,
+        comment: comment,
+    };
+
+    // Save the data in localStorage
+    localStorage.setItem('studentData', JSON.stringify(studentData));
+
+    // Optionally clear form fields
+    document.getElementById('formId').reset();
+}
+document.addEventListener('DOMContentLoaded', function() {
+    // For apply.html
+    const submitButton = document.getElementById('subtn');
+    if (submitButton) {
+        submitButton.addEventListener('click', saveFormData);
+    }
+const fileInput = document.getElementById('fileInput');
+    if (fileInput) { 
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {  // Corrected the typo
+                    const imgElement = document.getElementById('preview');
+                    imgElement.src = e.target.result;
+                  
+              localStorage.setItem('imgElement.src', JSON.stringify(imgElement.src)); 
+                };
+                reader.onerror = function() {
+                    console.error("An error occurred while reading the file.");
+                };
+                reader.readAsDataURL(file);  // Trigger the file reading
+            }
+        });
+    }
+
+
+</script>
+
+</body>
+</html>
